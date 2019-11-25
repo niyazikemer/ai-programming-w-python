@@ -21,7 +21,7 @@ parser.add_argument('--arch', dest='arch', type=str, default='densenet161')
 parser.add_argument('--learning_rate', dest='learning_rate', type=float, default=0.002)
 parser.add_argument('--hidden_units', dest='hidden_units', type=int, default=1000)
 parser.add_argument('--epochs', dest='epochs', type=int, default=1)
-parser.add_argument('--gpu', action='store_const',const='gpu')
+parser.add_argument('--gpu', action='store_const', const='gpu')
 
 args = parser.parse_args()
 
@@ -123,7 +123,7 @@ learning_rate=args.learning_rate
 # Only train the classifier parameters, feature parameters are frozen
 optimizer = optim.Adam(model.classifier.parameters(), lr=learning_rate)
 
-model.to(device);
+model.to(device)
 
 epochs = args.epochs
 steps = 0
